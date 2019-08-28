@@ -1,0 +1,16 @@
+language: ruby
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
+  texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
+  texlive-latex-recommended
+script:
+- mkdir _build
+- latexmk -pdf -outdir=_build cs101F2019_syllabus.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: Sb6zaxOY7enCFRKtku8UcckIiRpCDw/yQ9UQtWwm/DX1NT0Bgt8cRzUi8sTKopd+J+Wty16z4M4qU2mEPEXdMH7u1453LdS2a9H1FV4cMES2h55WMb7J+j9uhceFeCo1jFEScpmAQlVI4gec2BfpwjO8fK5L/6U1g4P1TTog6NsOncKXrg/FPRAIJ4DOOfrYvXWt3YjZ2Tf88M0rv1Hlt78utRDY3PScHt+H36BHo0nS3Hqx+Addff3kV8eFza+rZfqj+2twjuTWfiaqBGvFbzdEeKSI378bVjT17AfczeS+IzHy8+pLQVxTP9AdA+4WQaUaWM2n8gF/h+E7JhYKFI4ugZOuJHgeQnfmd56n8lDlNFnZPEBiNgUm8ixR+IWo2AHshnLucfQbfQ7WirpIvH/PEDuIW3flTzHXprO/sqQjpz8GpdVjuBpUT7G9cf5J3K/GtpGE/9oH/oNISralJcCN4Ljgswdm+a1rGD/HlK1GcOzBrPBTaDRJ9DztlzNxdwtRQR2n1Pu7rj+zXaidBE0dJE1CDnCpHbgsSVvL/U0lBJPAqs2A2GLfFnzRw2L2pol0SCPh1wUXyQxGSPFZlMWIvaPHVC0cFtQj86nOsmPdjOuSGUVkx/JV0/pNVdJ848R9UTdauh3mOwHlcqA0kMImH5j/krTK1EAAGFBx+dg=
+  file: _build/cs101F2019_syllabus.pdf
+  skip_cleanup: true
+  on:
+    tags: true
