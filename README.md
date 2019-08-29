@@ -6,7 +6,7 @@ the [Computer Science 101 Fall 2019 GitHub
 Organization](https://github.com/Allegheny-Computer-Science-101-F2019). All of
 the LaTeX files in this repository are automatically compiled with [Travis
 CI](https://travis-ci.com/), thus ensuring that they compile correctly and,
-moreover, that a PDF of each assignment is available in the GitHub repository
+moreover, that a PDF of the syllabus is available in the GitHub repository
 whenever a commit is tagged for a release.
 
 ## Accessing the Syllabus
